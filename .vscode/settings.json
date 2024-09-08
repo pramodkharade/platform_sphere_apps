@@ -1,0 +1,20 @@
+{
+  "notebook.defaultFormatter": null,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "prettier.eslintIntegration": true,
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/*.git": true,
+    "**/*.expo": true,
+    ".*": true,
+    "**/*.DS_Store": true,
+    "node_modules/": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": ["Appbar"]
+}
