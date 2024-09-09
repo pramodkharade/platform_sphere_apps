@@ -12,6 +12,12 @@ export type AuthStackParamList = {
   ForgotPassword: undefined;
 };
 
+// Define the param list for the home stack
+export type HomeStackParamList = {
+  Home: undefined;
+  Settings: undefined;
+};
+
 // Define a type for the configuration of each route
 export type StackRoutesType<ParamList extends ParamListBase> = Array<
   RouteConfig<
