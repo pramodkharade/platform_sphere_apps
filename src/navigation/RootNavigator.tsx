@@ -8,6 +8,7 @@ import { fetchAccessToken } from '../features/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import AuthNavigator from './AuthNavigator';
 import HomeNavigator from './HomeNavigator';
+import AboutScreen from 'src/screens/About/About';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,8 +37,9 @@ const RootNavigator: React.FC = () => {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Auth" component={AuthNavigator} />
-        <Stack.Screen name="Home" component={HomeNavigator} />
+        <Stack.Screen name="About" component={AboutScreen} />
+        {/* <Stack.Screen name="Auth" component={AuthNavigator} />
+        <Stack.Screen name="Home" component={HomeNavigator} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

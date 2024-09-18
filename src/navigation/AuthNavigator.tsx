@@ -3,6 +3,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 
 import LoginScreen from '../screens/LoginScreen/LoginScreen';
+import AboutScreen from '../screens/About/About'; // Adjust the import path as necessary
 import { AuthStackParamList, StackRoutesType } from '../types/navigation';
 
 const ForgotPassword = () => <View />;
@@ -13,8 +14,12 @@ type AuthStackRoutesType = StackRoutesType<AuthStackParamList>;
 const authStackRoutes: AuthStackRoutesType = [
   {
     name: 'Login',
-    component: LoginScreen,
+    component: AboutScreen,
   },
+  // {
+  //   name: 'About',
+  //   component: AboutScreen,
+  // },
   {
     name: 'Register',
     component: Register,
@@ -30,7 +35,7 @@ const Stack = createNativeStackNavigator<AuthStackParamList>();
 function AuthNavigator() {
   return (
     <Stack.Navigator
-      screenOptions={{
+           screenOptions={{
         headerShown: false,
       }}
     >

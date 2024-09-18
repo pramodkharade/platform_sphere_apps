@@ -3,14 +3,16 @@ import { Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Button, Text, TextInput } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 
-import illustrations from '../../assets/illustrations';
+import illustrations from '../../assets/illustrations'; // Ensure this is correct
 import Spacer from '../../components/spacer';
 import styles from '../LoginScreen/LoginScreen.styles';
 
 const LoginScreen: React.FC = () => {
   const [emailInput, setEmailInput] = useState<string>('');
   const [passwordInput, setPasswordInput] = useState<string>('');
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -45,6 +47,7 @@ const LoginScreen: React.FC = () => {
           onChangeText={setPasswordInput}
           value={passwordInput}
           textContentType="password"
+          secureTextEntry={true} // Hide the password input
         />
         <Spacer size={20} />
 
@@ -55,4 +58,5 @@ const LoginScreen: React.FC = () => {
     </SafeAreaView>
   );
 };
+
 export default LoginScreen;
