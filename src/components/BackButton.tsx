@@ -15,7 +15,7 @@ const BackButton: React.FC = () => {
 
 const styles = StyleSheet.create({
   backButton: {
-    marginLeft: 10,
+    marginLeft: 10,// is it working IDex
   },
   backButtonText: {
     color: '#fff',
