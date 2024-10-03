@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
+import React, { useState } from 'react';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 import BackButton from '../../components/BackButton';
 
 const AboutScreen: React.FC = () => {
@@ -8,7 +9,7 @@ const AboutScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <BackButton/>
+      <BackButton />
       <Text style={styles.header}>About</Text>
 
       <ScrollView style={styles.scrollView}>
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 20,
     alignItems: 'center',
-    bottom:150,
+    bottom: 150,
   },
   checkbox: {
     alignSelf: 'center',
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#9c27b0',
     width: 50,
     height: 50,
-    borderRadius: 10, 
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 24,
-    bottom:5,
+    bottom: 5,
   },
 });
 
