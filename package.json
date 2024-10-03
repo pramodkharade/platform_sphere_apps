@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@candlefinance/faster-image": "^1.6.2",
     "@react-native-community/checkbox": "^0.5.17",
     "@react-native-community/cli-platform-ios": "^14.1.1",
     "@react-navigation/bottom-tabs": "^6.6.1",
