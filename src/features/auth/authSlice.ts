@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { AuthState } from 'types/authState';
 
 import SecureStorageService from '../../services/SecureStorageService';
-import { AuthState } from '../../types';
 
 const { getItem, removeItem } = SecureStorageService;
 

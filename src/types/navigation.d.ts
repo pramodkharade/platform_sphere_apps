@@ -10,7 +10,6 @@ export type AuthStackParamList = {
   Login: undefined;
   Register: undefined;
   ForgotPassword: undefined;
-  
 };
 
 // Define the param list for the home stack

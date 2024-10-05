@@ -1,9 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from '@screens/LoginScreen/LoginScreen';
 import * as React from 'react';
 import { View } from 'react-native';
-
-import LoginScreen from '../screens/LoginScreen/LoginScreen';
-import { HomeStackParamList, StackRoutesType } from '../types/navigation';
+import { HomeStackParamList, StackRoutesType } from 'types/navigation';
 
 const Register = () => <View />;
 

@@ -1,9 +1,8 @@
 // components/ActionButton.tsx
 
+import typography from '@theme/styles/typography';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
-import typography from '../../theme/styles/typography';
 
 export enum IconType {
   Appreciation = 'appreciation.png',
@@ -30,7 +29,7 @@ const getImageSource = (icon: IconType) => {
   }
 };
 
-const ActionButton: React.FC<ActionButtonProps> = ({ icon, text, onPress }) => {
+export const ActionButton: React.FC<ActionButtonProps> = ({ icon, text, onPress }) => {
   return (
     <TouchableOpacity style={styles.actionButton} onPress={onPress}>
       <View style={styles.imageButton}>
