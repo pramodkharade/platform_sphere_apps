@@ -1,8 +1,11 @@
 import { FasterImageView } from '@candlefinance/faster-image';
 import React, { memo } from 'react';
-import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 
+import typography from '../../theme/styles/typography';
 import Spacer from '../spacer';
+import { IconType } from './PostIconButton';
+import ActionButton from './PostIconButton';
 
 interface PostProps {
   id: string;
@@ -22,6 +25,10 @@ interface PostProps {
   shares: number;
 }
 
+const appreciationsIcon: string = 'appreciation.png';
+const commentsIcon: string = 'comment.png';
+const sharesIcon: string = 'share.png';
+
 const { width } = Dimensions.get('window');
 
 const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, appreciations, comments, shares }) => {
@@ -33,11 +40,20 @@ const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, apprec
   const renderContent = () => {
     switch (content.type) {
       case 'text':
-        return <Text style={styles.contentText}>{content.text}</Text>;
+        return (
+          <View style={{ paddingHorizontal: 8 }}>
+            <Text style={typography.body}>{content.text}</Text>
+          </View>
+        );
       case 'image':
         return (
           <View style={styles.contentImageContainer}>
-            {content.text && content.text.trim().length > 0 && <Text style={styles.contentText}>{content.text}</Text>}
+            {content.text && content.text.trim().length > 0 && (
+              <View style={{ flexDirection: 'column' }}>
+                <Text style={typography.body}>{content.text}</Text>
+                <Spacer />
+              </View>
+            )}
             <FasterImageView
               style={styles.contentImage}
               source={{
@@ -52,7 +68,12 @@ const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, apprec
         // Implement video component here
         return (
           <View style={styles.contentVideo}>
-            {content.text && content.text.trim().length > 0 && <Text style={styles.contentText}>{content.text}</Text>}
+            {content.text && content.text.trim().length > 0 && (
+              <View style={{ flexDirection: 'column' }}>
+                <Text style={typography.body}>{content.text}</Text>
+                <Spacer horizontal={true} size={4} />
+              </View>
+            )}
             <Text>Video Player</Text>
           </View>
         );
@@ -73,25 +94,18 @@ const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, apprec
         />
         <View style={styles.authorInfo}>
           <View style={styles.usernameContainer}>
-            <Text style={styles.authorName}>{author.name}</Text>
-            <Text style={styles.authorUsername}>@{author.username}</Text>
-            <Text style={styles.timestamp}> · {timestamp}</Text>
+            <Text style={typography.bodyBold}>{author.name}</Text>
+            <Spacer horizontal={true} size={4} />
+            <Text style={typography.caption}>@{author.username}</Text>
+            <Text style={typography.caption}> · {timestamp}</Text>
           </View>
         </View>
       </View>
       {renderContent()}
       <View style={styles.footer}>
-        <TouchableOpacity style={styles.actionButton}>
-          <Text>👍 {appreciations}</Text>
-        </TouchableOpacity>
-        <View style={{ flex: 1 }} />
-        <TouchableOpacity style={styles.actionButton}>
-          <Text>💬 {comments}</Text>
-        </TouchableOpacity>
-        <View style={{ flex: 1 }} />
-        <TouchableOpacity style={styles.actionButton}>
-          <Text>↗️ {shares}</Text>
-        </TouchableOpacity>
+        <ActionButton icon={IconType.Appreciation} text={appreciations.toString()} onPress={() => {}} />
+        <ActionButton icon={IconType.Comment} text={comments.toString()} onPress={() => {}} />
+        <ActionButton icon={IconType.Share} text={shares.toString()} onPress={() => {}} />
       </View>
     </View>
   );
@@ -123,30 +137,14 @@ const styles = StyleSheet.create({
     alignItems: 'baseline',
     marginBottom: 4,
   },
-  authorUsername: {
-    color: '#666',
-    marginLeft: 5,
-  },
-  authorName: {
-    color: '#0F1419',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  timestamp: {
-    color: '#666',
-    fontSize: 12,
-  },
-  contentText: {
-    fontSize: 16,
-    marginBottom: 10,
-  },
   contentImageContainer: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
+    paddingHorizontal: 8,
   },
   contentImage: {
-    width: width - 42,
+    width: width - 56,
     aspectRatio: 16 / 9,
     marginBottom: 10,
   },
@@ -158,12 +156,9 @@ const styles = StyleSheet.create({
   },
   footer: {
     flexDirection: 'row',
-    paddingTop: 2,
+    paddingTop: 8,
     paddingHorizontal: 8,
-  },
-  actionButton: {
-    alignItems: 'center',
-    paddingVertical: 5,
+    justifyContent: 'space-between',
   },
 });
 

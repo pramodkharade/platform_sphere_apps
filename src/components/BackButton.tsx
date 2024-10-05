@@ -1,6 +1,6 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 // Reusable BackButton component
 const BackButton: React.FC = () => {
@@ -15,7 +15,7 @@ const BackButton: React.FC = () => {
 
 const styles = StyleSheet.create({
   backButton: {
-    marginLeft: 10,// is it working IDex
+    marginLeft: 10, // is it working IDex
   },
   backButtonText: {
     color: '#fff',
