@@ -9,6 +9,7 @@ type Post = {
   id: string;
   author: {
     name: string;
+    username: string;
     avatar: string;
   };
   content: {
@@ -29,17 +30,18 @@ const generateDummyPosts = (count: number): Post[] => {
       id: `post-${index}`,
       author: {
         name: `User ${index + 1}`,
+        username: `user${index + 1}`,
         avatar: `https://via.placeholder.com/150?text=User${index + 1}`,
       },
       content: {
         type: index % 3 === 0 ? 'text' : index % 3 === 1 ? 'image' : 'video',
         text:
-          index % 3 === 0
+          index % 2 === 0
             ? `This is a sample text post number ${index + 1}. It can contain multiple sentences to simulate a real post.`
             : undefined,
         media: index % 3 !== 0 ? `https://via.placeholder.com/500x300?text=Post${index + 1}` : undefined,
       },
-      timestamp: new Date(Date.now() - index * 3600000).toISOString(), // Posts every hour
+      timestamp: '2 hours ago', // Posts every hour
       appreciations: Math.floor(Math.random() * 1000),
       comments: Math.floor(Math.random() * 100),
       shares: Math.floor(Math.random() * 50),

@@ -2,10 +2,13 @@ import { FasterImageView } from '@candlefinance/faster-image';
 import React, { memo } from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+import Spacer from '../spacer';
+
 interface PostProps {
   id: string;
   author: {
     name: string;
+    username: string;
     avatar: string;
   };
   content: {
@@ -33,18 +36,23 @@ const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, apprec
         return <Text style={styles.contentText}>{content.text}</Text>;
       case 'image':
         return (
-          <FasterImageView
-            style={styles.contentImage}
-            source={{
-              url: content.media || 'https://picsum.photos/200/300',
-              resizeMode: 'contain',
-            }}
-          />
+          <View style={styles.contentImageContainer}>
+            {content.text && content.text.trim().length > 0 && <Text style={styles.contentText}>{content.text}</Text>}
+            <FasterImageView
+              style={styles.contentImage}
+              source={{
+                url: content.media || 'https://picsum.photos/200/300',
+                resizeMode: 'cover',
+                borderRadius: 8,
+              }}
+            />
+          </View>
         );
       case 'video':
         // Implement video component here
         return (
           <View style={styles.contentVideo}>
+            {content.text && content.text.trim().length > 0 && <Text style={styles.contentText}>{content.text}</Text>}
             <Text>Video Player</Text>
           </View>
         );
@@ -56,10 +64,19 @@ const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, apprec
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <FasterImageView source={{ url: author.avatar }} style={styles.avatar} />
+        <FasterImageView
+          source={{
+            url: author.avatar,
+            borderRadius: 24,
+          }}
+          style={styles.avatar}
+        />
         <View style={styles.authorInfo}>
-          <Text style={styles.authorName}>{author.name}</Text>
-          <Text style={styles.timestamp}>{timestamp}</Text>
+          <View style={styles.usernameContainer}>
+            <Text style={styles.authorName}>{author.name}</Text>
+            <Text style={styles.authorUsername}>@{author.username}</Text>
+            <Text style={styles.timestamp}> · {timestamp}</Text>
+          </View>
         </View>
       </View>
       {renderContent()}
@@ -67,9 +84,11 @@ const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, apprec
         <TouchableOpacity style={styles.actionButton}>
           <Text>👍 {appreciations}</Text>
         </TouchableOpacity>
+        <View style={{ flex: 1 }} />
         <TouchableOpacity style={styles.actionButton}>
           <Text>💬 {comments}</Text>
         </TouchableOpacity>
+        <View style={{ flex: 1 }} />
         <TouchableOpacity style={styles.actionButton}>
           <Text>↗️ {shares}</Text>
         </TouchableOpacity>
@@ -80,10 +99,10 @@ const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, apprec
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    alignSelf: 'center',
+    paddingVertical: 10,
     marginBottom: 10,
-    padding: 10,
-    width: width - 20,
+    width: width - 42,
   },
   header: {
     flexDirection: 'row',
@@ -91,15 +110,25 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   avatar: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 48,
+    height: 48,
     marginRight: 10,
   },
   authorInfo: {
     flex: 1,
   },
+  usernameContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'baseline',
+    marginBottom: 4,
+  },
+  authorUsername: {
+    color: '#666',
+    marginLeft: 5,
+  },
   authorName: {
+    color: '#0F1419',
     fontWeight: 'bold',
     fontSize: 16,
   },
@@ -111,28 +140,28 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 10,
   },
+  contentImageContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
   contentImage: {
-    width: width - 20,
-    aspectRatio: ((width - 20) * 9) / 16,
+    width: width - 42,
+    aspectRatio: 16 / 9,
     marginBottom: 10,
   },
   contentVideo: {
-    width: width - 20,
-    aspectRatio: ((width - 20) * 9) / 16,
-    backgroundColor: '#ddd',
+    width: width - 42,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
   },
   footer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#ccc',
-    paddingTop: 10,
+    paddingTop: 2,
+    paddingHorizontal: 8,
   },
   actionButton: {
-    flex: 1,
     alignItems: 'center',
     paddingVertical: 5,
   },
