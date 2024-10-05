@@ -25,10 +25,6 @@ interface PostProps {
   shares: number;
 }
 
-const appreciationsIcon: string = 'appreciation.png';
-const commentsIcon: string = 'comment.png';
-const sharesIcon: string = 'share.png';
-
 const { width } = Dimensions.get('window');
 
 const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, appreciations, comments, shares }) => {
@@ -54,14 +50,15 @@ const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, apprec
                 <Spacer />
               </View>
             )}
-            <FasterImageView
-              style={styles.contentImage}
-              source={{
-                url: content.media || 'https://picsum.photos/200/300',
-                resizeMode: 'cover',
-                borderRadius: 8,
-              }}
-            />
+            <View style={styles.contentImageContainer}>
+              <FasterImageView
+                style={styles.contentImage}
+                source={{
+                  url: content.media || 'https://picsum.photos/200/300',
+                  resizeMode: 'cover',
+                }}
+              />
+            </View>
           </View>
         );
       case 'video':
@@ -85,13 +82,10 @@ const PostItem: React.FC<PostProps> = memo(({ author, content, timestamp, apprec
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <FasterImageView
-          source={{
-            url: author.avatar,
-            borderRadius: 24,
-          }}
-          style={styles.avatar}
-        />
+        <View style={styles.avatar}>
+          <FasterImageView source={{ url: author.avatar }} style={styles.avatar} />
+        </View>
+        <Spacer horizontal={true} size={4} />
         <View style={styles.authorInfo}>
           <View style={styles.usernameContainer}>
             <Text style={typography.bodyBold}>{author.name}</Text>
@@ -126,7 +120,8 @@ const styles = StyleSheet.create({
   avatar: {
     width: 48,
     height: 48,
-    marginRight: 10,
+    borderRadius: 24,
+    overflow: 'hidden',
   },
   authorInfo: {
     flex: 1,
@@ -141,12 +136,12 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    paddingHorizontal: 8,
+    borderRadius: 12,
+    overflow: 'hidden',
   },
   contentImage: {
     width: width - 56,
     aspectRatio: 16 / 9,
-    marginBottom: 10,
   },
   contentVideo: {
     width: width - 42,
