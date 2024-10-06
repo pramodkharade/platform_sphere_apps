@@ -1,0 +1,77 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Outfit-Bold.ttf",
+      "sha1": "dd5f4206d22d8b093a53a2f6423ed532fd656aeb"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-Medium.ttf",
+      "sha1": "accdc4a94720336a48bb6fd31759bbfa268f902e"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-Regular.ttf",
+      "sha1": "7724dc42adf3e8caa9a1f7f64bc02016f201f550"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-SemiBold.ttf",
+      "sha1": "8e01f823ad73ea02ad96c676497c3e050d6e9e90"
+    },
+    {
+      "path": "src/assets/icons/appreciation.png",
+      "sha1": "d7d7563f1c55c82ecf968b674d15feaa7df74c46"
+    },
+    {
+      "path": "src/assets/icons/appreciation@2x.png",
+      "sha1": "1262ec63e4f83b15d39e32601d490e99356b3a7c"
+    },
+    {
+      "path": "src/assets/icons/appreciation@3x.png",
+      "sha1": "2f7af9697887abf74417ab650619296ba3e7106d"
+    },
+    {
+      "path": "src/assets/icons/appreciation@4x.png",
+      "sha1": "4c83e7b9cb515d07e9e7b88ac672c5c070f1777d"
+    },
+    {
+      "path": "src/assets/icons/comment.png",
+      "sha1": "63c5758f2cb4d726e2513756ebea5fb6a88779b1"
+    },
+    {
+      "path": "src/assets/icons/comment@2x.png",
+      "sha1": "9bae547231e350d0e305567a9272e26d7dfbc8a5"
+    },
+    {
+      "path": "src/assets/icons/comment@3x.png",
+      "sha1": "d98264d71a0b78894a9e3f0f4c8249defcf58308"
+    },
+    {
+      "path": "src/assets/icons/comment@4x.png",
+      "sha1": "b78dec7d7d98db63135d7c97c1ba243cd510102b"
+    },
+    {
+      "path": "src/assets/icons/share.png",
+      "sha1": "5ac90acb8df85f4c0a7be99d7d4b882e6fd9e3f4"
+    },
+    {
+      "path": "src/assets/icons/share@2x.png",
+      "sha1": "5072afa299e166e588863064fb879f8973410c91"
+    },
+    {
+      "path": "src/assets/icons/share@3x.png",
+      "sha1": "4932dd8f67afdd82d2721c85ff7efb2cadee6f31"
+    },
+    {
+      "path": "src/assets/icons/share@4x.png",
+      "sha1": "25c4c48538e12a93ae83b9d7c60cc3b728140bf4"
+    },
+    {
+      "path": "src/assets/illustrations/index.ts",
+      "sha1": "90c18d3e565616a95761a0015d32a23ad608c234"
+    },
+    {
+      "path": "src/assets/illustrations/login.png",
+      "sha1": "27142d2229fc61ceee1fec538d370a123cfbca64"
+    }
+  ]
+}

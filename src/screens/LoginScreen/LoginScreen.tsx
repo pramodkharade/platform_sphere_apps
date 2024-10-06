@@ -1,9 +1,9 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Button, Text, TextInput } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
 
 import illustrations from '../../assets/illustrations'; // Ensure this is correct
 import Spacer from '../../components/spacer';

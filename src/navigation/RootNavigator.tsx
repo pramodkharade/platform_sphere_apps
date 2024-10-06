@@ -1,13 +1,12 @@
+import { selectAccessToken, selectAuthStatus } from '@features/auth/authSelectors';
+import { fetchAccessToken } from '@features/auth/authSlice';
+import HomeNavigator from '@navigation/HomeNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AboutScreen from '@screens/About/About';
+import { useAppDispatch, useAppSelector } from '@store/hooks';
 import React, { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
-import AboutScreen from 'src/screens/About/About';
-
-import { selectAccessToken, selectAuthStatus } from '../features/auth/authSelectors';
-import { fetchAccessToken } from '../features/auth/authSlice';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import HomeNavigator from './HomeNavigator';
 //import AuthNavigator from './AuthNavigator';
 //import HomeNavigator from './HomeNavigator';
 
