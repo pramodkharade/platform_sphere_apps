@@ -5,7 +5,7 @@ import { selectNotifications } from '@features/notificationccenter/notificationS
 import { useAppDispatch, useAppSelector } from '@store/hooks';
 import { colors } from '@theme/colors';
 import React, { useCallback, useEffect } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Notification } from 'types/notificationCenterState';
 

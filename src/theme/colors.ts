@@ -6,6 +6,7 @@ const palette = {
   accent: '#FFC700',
   onSurface: '#000000',
   onSurfaceSecondary: '#8391A1',
+  divider: '#FAFAFA',
 } as const;
 
 export const colors = {

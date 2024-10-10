@@ -1,14 +1,27 @@
+import Spacer from '@components/spacer';
+import { colors } from '@theme/colors';
+import { spacing } from '@theme/spacing';
 import typography from '@theme/styles/typography';
+import { timeAgo } from '@utils/dateutils';
 import { memo } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { Notification } from 'types/notificationCenterState';
 
-const NotificationItem = memo(({ author, title, message, date }: Notification) => {
+const NotificationItem = memo(({ author, message, date }: Notification) => {
   return (
     <View style={styles.container}>
       <Image source={{ uri: author.avatar }} style={styles.avatar} />
       <View style={styles.textContainer}>
-        <Text style={typography.body}>{message}</Text>
+        <View style={styles.titleContainer}>
+          <Text style={typography.body}>{author.name}</Text>
+          <Spacer horizontal size={4} />
+          <Text style={typography.caption}>@{author.username}</Text>
+          <View style={styles.spacer} />
+          <Text style={typography.caption}>{timeAgo(date)}</Text>
+        </View>
+        <Text style={typography.caption} numberOfLines={2}>
+          {message}
+        </Text>
       </View>
     </View>
   );
@@ -18,10 +31,13 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
+    padding: spacing.sm,
+    borderBottomWidth: spacing.xxs,
+    borderBottomColor: colors.palette.divider,
+  },
+  titleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   avatar: {
     width: 40,
@@ -30,6 +46,9 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   textContainer: {
+    flex: 1,
+  },
+  spacer: {
     flex: 1,
   },
 });
