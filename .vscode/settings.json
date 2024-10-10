@@ -16,5 +16,5 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["Appbar"]
+  "cSpell.words": ["Appbar", "ellipsize"]
 }

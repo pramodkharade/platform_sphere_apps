@@ -2,6 +2,7 @@ import { FasterImageView } from '@candlefinance/faster-image';
 import { ActionButton, IconType } from '@components/post/PostIconButton';
 import Spacer from '@components/spacer';
 import typography from '@theme/styles/typography';
+import { formatDate } from '@utils/dateutils';
 import React, { memo } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { Post } from 'types/postFeedState';
@@ -62,7 +63,7 @@ const PostItem: React.FC<Post> = memo(({ author, content, timestamp, appreciatio
             <Text style={typography.bodyBold}>{author.name}</Text>
             <Spacer horizontal size={4} />
             <Text style={typography.caption}>@{author.username}</Text>
-            <Text style={typography.caption}> · {timestamp}</Text>
+            <Text style={typography.caption}> · {formatDate(timestamp)}</Text>
           </View>
         </View>
       </View>

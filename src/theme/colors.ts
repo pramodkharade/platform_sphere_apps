@@ -2,7 +2,7 @@ const palette = {
   surface: '#ffffff',
   primary: '#6929C4',
   secondary: '#8A79D7',
-  tertiary: 'D8A8C0',
+  tertiary: '#D8A8C0',
   accent: '#FFC700',
   onSurface: '#000000',
   onSurfaceSecondary: '#8391A1',
