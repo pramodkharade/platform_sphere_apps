@@ -1,25 +1,27 @@
-import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-// Reusable BackButton component
-const BackButton: React.FC = () => {
-  const navigation = useNavigation();
+import React from 'react';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+
+const BackButton = () => {
 
   return (
-    <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-      <Text style={styles.backButtonText}>Back</Text>
+    <TouchableOpacity style={styles.button}>
+      <Text style={styles.text}>{'←'}</Text>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  backButton: {
-    marginLeft: 10, // is it working IDex
+  button: {
+    padding: 10,
+    top: 10, 
+    padding: 10, 
+    zIndex: 1,
   },
-  backButtonText: {
-    color: '#fff',
-    fontSize: 16,
+  text: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: '#000',
   },
 });
 
