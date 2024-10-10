@@ -17,8 +17,10 @@ const NotificationItem = memo(({ author, message, date }: Notification) => {
           <Spacer horizontal size={4} />
           <Text style={typography.caption}>@{author.username}</Text>
           <View style={styles.spacer} />
-          <Text style={typography.caption}>{timeAgo(date)}</Text>
         </View>
+        <Text style={typography.caption} numberOfLines={1}>
+          {timeAgo(date)}
+        </Text>
         <Text style={typography.caption} numberOfLines={2}>
           {message}
         </Text>
@@ -32,10 +34,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: spacing.sm,
+    backgroundColor: colors.palette.surface,
     borderBottomWidth: spacing.xxs,
     borderBottomColor: colors.palette.divider,
   },
   titleContainer: {
+    flex: 1,
+    alignSelf: 'flex-start',
     flexDirection: 'row',
     alignItems: 'center',
   },
