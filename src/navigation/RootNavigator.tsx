@@ -1,14 +1,14 @@
+import { selectAccessToken, selectAuthStatus } from '@features/auth/authSelectors';
+import { fetchAccessToken } from '@features/auth/authSlice';
+import HomeNavigator from '@navigation/HomeNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AboutScreen from '@screens/About/About';
+import { useAppDispatch, useAppSelector } from '@store/hooks';
 import React, { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
-
-import { selectAccessToken, selectAuthStatus } from '../features/auth/authSelectors';
-import { fetchAccessToken } from '../features/auth/authSlice';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import AuthNavigator from './AuthNavigator';
-import HomeNavigator from './HomeNavigator';
-import AboutScreen from 'src/screens/About/About';
+//import AuthNavigator from './AuthNavigator';
+//import HomeNavigator from './HomeNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,9 +37,9 @@ const RootNavigator: React.FC = () => {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="About" component={AboutScreen} />
+        <Stack.Screen name="Home" component={HomeNavigator} />
         {/* <Stack.Screen name="Auth" component={AuthNavigator} />
-        <Stack.Screen name="Home" component={HomeNavigator} /> */}
+        <Stack.Screen name="About" component={AboutScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

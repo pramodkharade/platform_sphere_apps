@@ -1,5 +1,5 @@
-import { RootState } from '../../store';
-import { AuthState } from '../../types';
+import { RootState } from '@store/index';
+import { AuthState } from 'types/authState';
 
 export const selectAccessToken = (state: RootState): AuthState['accessToken'] => state.auth.accessToken;
 
