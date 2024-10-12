@@ -18,7 +18,7 @@ const RaiseVoiceScreen: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-        <BackButton/>
+      <BackButton />
       <View style={styles.header}>
         {/* Uncomment below line if you are using Ionicons */}
         {/* <Ionicons name="chevron-back" size={24} color={colors.text} /> */}
@@ -34,7 +34,7 @@ const RaiseVoiceScreen: React.FC = () => {
           />
         </View>
 
-        <Text style={[typography.body, styles.subtitle]}>Select the way in which you want to raise a voice.</Text>
+        <Text style={[typography.subtitle]}>Select the way in which you want to raise a voice.</Text>
 
         <Image
           source={{ uri: 'https://example.com/your-illustration-url' }}
@@ -71,7 +71,8 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   titleText: {
-    color: colors.palette.primary,
+    color: '#000',
+    marginLeft:45,
   },
   titleIcon: {
     width: 24,

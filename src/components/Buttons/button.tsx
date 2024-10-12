@@ -17,14 +17,15 @@ const Button: React.FC<ButtonProps> = ({ title, onPress }) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.palette.primary, 
+    backgroundColor: colors.palette.buttonBackground,
     paddingVertical: 16,
     paddingHorizontal: 24,
     borderRadius: 12,
     marginVertical: 8,
     alignItems: 'center',
   },
-  buttonText: { 
+  buttonText: {
+    color: colors.palette.buttonText,
     fontWeight: 'bold',
     fontSize: 16,
   },

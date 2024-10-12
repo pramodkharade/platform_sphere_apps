@@ -6,6 +6,8 @@ const palette = {
   accent: '#FFC700',
   onSurface: '#000000',
   onSurfaceSecondary: '#8391A1',
+  buttonBackground: '#e2dcfe',
+  buttonText: '##502b9c',
 } as const;
 
 export const colors = {

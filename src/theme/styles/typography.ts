@@ -43,6 +43,14 @@ const typography = StyleSheet.create({
     fontFamily: 'Outfit-Medium',
     color: colors.textDim,
   },
+  subtitle: {
+    fontSize: 16,
+    fontFamily: 'Outfit-Medium',
+    color: '#8E8E8E', 
+    textAlign: 'center',
+    marginTop: 10,
+    marginBottom: 20,
+  },
 });
 
 export default typography;
