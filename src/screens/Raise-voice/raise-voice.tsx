@@ -25,8 +25,8 @@ const RaiseVoiceScreen: React.FC = () => {
       </View>
 
       <View style={styles.content}>
-        <View style={styles.titleContainer}>
-          <Text style={[typography.heading1, styles.titleText]}>Raise Voice</Text>
+        <View >
+          <Text style={[typography.heading1]}>Raise Voice</Text>
           <Image
             source={{ uri: 'https://example.com/your-illustration-url' }}
             style={styles.titleIcon}
@@ -34,7 +34,7 @@ const RaiseVoiceScreen: React.FC = () => {
           />
         </View>
 
-        <Text style={[typography.subtitle]}>Select the way in which you want to raise a voice.</Text>
+        <Text style={[typography.subtitle, styles.subtitle]}>Select the way in which you want to raise a voice.</Text>
 
         <Image
           source={{ uri: 'https://example.com/your-illustration-url' }}
@@ -64,15 +64,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 24,
     alignItems: 'center',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  titleText: {
-    color: '#000',
-    marginLeft:45,
   },
   titleIcon: {
     width: 24,

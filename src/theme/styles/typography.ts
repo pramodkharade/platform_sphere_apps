@@ -47,7 +47,6 @@ const typography = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'Outfit-Medium',
     color: '#8E8E8E', 
-    textAlign: 'center',
     marginTop: 10,
     marginBottom: 20,
   },

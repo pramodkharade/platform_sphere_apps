@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: colors.palette.buttonText,
     fontWeight: 'bold',
+    fontFamily: 'Outfit-Medium',
     fontSize: 16,
   },
 });
