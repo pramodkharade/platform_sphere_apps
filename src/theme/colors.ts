@@ -7,6 +7,7 @@ const palette = {
   onSurface: '#000000',
   onSurfaceSecondary: '#8391A1',
   divider: '#FAFAFA',
+  shadow: '#000000',
 } as const;
 
 export const colors = {

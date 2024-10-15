@@ -43,6 +43,11 @@ const typography = StyleSheet.create({
     fontFamily: 'Outfit-Medium',
     color: colors.textDim,
   },
+  pillSecondaryButton: {
+    fontSize: 12,
+    fontFamily: 'Outfit-Medium',
+    color: colors.palette.primary,
+  },
 });
 
 export default typography;
