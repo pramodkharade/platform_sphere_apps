@@ -1,4 +1,5 @@
 import PrimaryButton from '@components/PrimaryButton';
+import SecondaryButton from '@components/SecondaryButton';
 import Spacer from '@components/spacer';
 import { colors } from '@theme/colors';
 import { spacing } from '@theme/spacing';
