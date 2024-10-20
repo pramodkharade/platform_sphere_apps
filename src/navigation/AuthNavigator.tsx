@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { DashboardScreen } from '@screens/Dashboard/DashboardScreen';
+import PasswordChangedScreen from '@screens/PasswordChanged/PasswordChangedScreen';
 import * as React from 'react';
 import { View } from 'react-native';
 import { AuthStackParamList, StackRoutesType } from 'types/navigation';
@@ -12,7 +13,7 @@ type AuthStackRoutesType = StackRoutesType<AuthStackParamList>;
 const authStackRoutes: AuthStackRoutesType = [
   {
     name: 'Login',
-    component: DashboardScreen,
+    component: PasswordChangedScreen,
   },
   // {
   //   name: 'About',

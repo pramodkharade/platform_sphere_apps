@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+
 import BackButton from '../../components/BackButton';
 
 const OTPVerificationScreen = ({ navigation }) => {
@@ -17,7 +18,7 @@ const OTPVerificationScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <BackButton/>
+      <BackButton />
       <View style={styles.contentContainer}>
         <View style={styles.illustration}>
           {/* You would typically use an actual image here */}
@@ -113,8 +114,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 8,
-    color:'#000',
-    marginTop:40
+    color: '#000',
+    marginTop: 40,
   },
   subtitle: {
     fontSize: 16,
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     fontSize: 16,
     marginBottom: 24,
-    color: '#000'
+    color: '#000',
   },
   saveButton: {
     backgroundColor: '#6C63FF',
