@@ -58,7 +58,7 @@ const CenteredImageScreen: React.FC<CenteredImageScreenProps> = ({
         <View style={styles.content}>
           <Image source={imageSource} style={[styles.image, imageStyle]} resizeMode="contain" />
           <Text style={[typography.heading1, headerTextStyle]}>{headerText}</Text>
-          <Spacer size={4} />
+          <Spacer size={spacing.xxs} />
           <Text style={[typography.caption, bodyTextStyle]}>{bodyText}</Text>
           <TouchableOpacity style={[styles.button, buttonStyle]} onPress={onButtonPress}>
             <Text style={[typography.label, buttonTextStyle]}>{buttonText}</Text>
