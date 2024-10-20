@@ -43,6 +43,16 @@ const typography = StyleSheet.create({
     fontFamily: 'Outfit-Medium',
     color: colors.textDim,
   },
+  label: {
+    fontSize: 16,
+    fontFamily: 'Outfit-Bold',
+    color: colors.palette.surface,
+  },
+  labelSecondary: {
+    fontSize: 16,
+    fontFamily: 'Outfit-Bold',
+    color: colors.palette.primary,
+  },
   pillSecondaryButton: {
     fontSize: 12,
     fontFamily: 'Outfit-Medium',
