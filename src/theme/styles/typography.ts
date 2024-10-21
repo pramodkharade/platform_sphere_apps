@@ -55,6 +55,8 @@ const typography = StyleSheet.create({
   },
   pillSecondaryButton: {
     fontSize: 12,
+    fontFamily: 'Outfit-Medium',
+    color: colors.palette.primary,
   },
   subtitle: {
     fontSize: 16,
