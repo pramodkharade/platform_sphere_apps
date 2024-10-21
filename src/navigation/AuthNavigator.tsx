@@ -5,6 +5,9 @@ import HomeScreen from '@screens/HomeScreen/HomeScreen';
 import * as React from 'react';
 import { View } from 'react-native';
 import { AuthStackParamList, StackRoutesType } from 'types/navigation';
+import CreatePassword from '@screens/Create-Password/create_password';
+import { DashboardScreen } from '@screens/Dashboard/DashboardScreen';
+import LoginScreen from '@screens/LoginScreen/LoginScreen';
 
 const ForgotPassword = () => <View />;
 const Register = () => <View />;
@@ -14,7 +17,7 @@ type AuthStackRoutesType = StackRoutesType<AuthStackParamList>;
 const authStackRoutes: AuthStackRoutesType = [
   {
     name: 'Login',
-    component: RaiseVoiceScreen,
+    component: CreatePassword,
   },
   // {
   //   name: 'About',
