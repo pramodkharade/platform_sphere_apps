@@ -43,10 +43,18 @@ const typography = StyleSheet.create({
     fontFamily: 'Outfit-Medium',
     color: colors.textDim,
   },
-  pillSecondaryButton: {
-    fontSize: 12,
+  subtitle: {
+    fontSize: 16,
     fontFamily: 'Outfit-Medium',
-    color: colors.palette.primary,
+    color: '#8E8E8E', 
+    marginTop: 10,
+    marginBottom: 20,
+  },
+  buttonText: {
+    color: colors.palette.buttonText,
+    fontWeight: 'bold',
+    fontFamily: 'Outfit-Medium',
+    fontSize: 16,
   },
 });
 
