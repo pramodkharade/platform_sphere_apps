@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import BackButton from '../../components/BackButton';
+import typography from '@theme/styles/typography';
+import Button from '../../components/Buttons/button';
 
 const OTPVerificationScreen = ({ navigation }) => {
   const [otpCode, setOtpCode] = useState('');
@@ -32,8 +34,8 @@ const OTPVerificationScreen = ({ navigation }) => {
           <View style={styles.personIllustration} />
         </View>
 
-        <Text style={styles.title}>OTP Verification</Text>
-        <Text style={styles.subtitle}>Enter the verification code we just sent on your email address.</Text>
+        <Text style={typography.heading1}>OTP Verification</Text>
+        <Text style={typography.subtitle}>Enter the verification code we just sent on your email address.</Text>
 
         <TextInput
           style={styles.otpInput}
@@ -44,12 +46,10 @@ const OTPVerificationScreen = ({ navigation }) => {
           maxLength={6}
         />
 
-        <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
-          <Text style={styles.saveButtonText}>Save</Text>
-        </TouchableOpacity>
+        <Button title="Save" />
 
         <View style={styles.resendContainer}>
-          <Text style={styles.resendText}>Didn't received code? </Text>
+          <Text style={typography.caption}>Didn't received code? </Text>
           <TouchableOpacity onPress={handleResend}>
             <Text style={styles.resendLink}>Resend</Text>
           </TouchableOpacity>
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
     height: 200,
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 40,
   },
   mockForm: {
     width: 120,
@@ -110,18 +111,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#6C63FF',
     borderRadius: 8,
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    color: '#000',
-    marginTop: 40,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#666',
-    marginBottom: 24,
-  },
   otpInput: {
     height: 50,
     borderWidth: 1,
@@ -132,25 +121,10 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     color: '#000',
   },
-  saveButton: {
-    backgroundColor: '#6C63FF',
-    height: 50,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  saveButtonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: '600',
-  },
   resendContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: 24,
-  },
-  resendText: {
-    color: '#666',
   },
   resendLink: {
     color: '#FFB800',
