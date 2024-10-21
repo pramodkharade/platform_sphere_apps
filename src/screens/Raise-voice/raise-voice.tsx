@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView, Image, Dimensions } from 'react-n
 import Button from '../../components/Buttons/button';
 import { colors } from '@theme/colors';
 import typography from '@theme/styles/typography';
+import { spacing } from '@theme/spacing';
 import BackButton from '@components/BackButton';
 
 const { width } = Dimensions.get('window');
@@ -57,18 +58,18 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
   header: {
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md, 
   },
   content: {
     flex: 1,
-    paddingHorizontal: 24,
+    paddingHorizontal: spacing.xl, 
     alignItems: 'center',
   },
   titleIcon: {
-    width: 24,
-    height: 24,
-    marginLeft: 8,
+    width: spacing.md, 
+    height: spacing.md, 
+    marginLeft: spacing.xs, 
   },
   subtitle: {
     color: colors.textDim,

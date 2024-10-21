@@ -1,6 +1,8 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { colors } from '@theme/colors'; 
+import { colors } from '@theme/colors';
+import { spacing } from '@theme/spacing';
+import typography from '@theme/styles/typography'; 
 
 interface ButtonProps {
   title: string;
@@ -10,7 +12,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ title, onPress }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Text style={styles.buttonText}>{title}</Text>
+      <Text style={typography.buttonText}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -18,18 +20,12 @@ const Button: React.FC<ButtonProps> = ({ title, onPress }) => {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: colors.palette.buttonBackground,
-    paddingVertical: 16,
-    paddingHorizontal: 24,
-    borderRadius: 12,
-    marginVertical: 8,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.lg, 
+    borderRadius: spacing.sm, 
+    marginVertical: spacing.sm,
     alignItems: 'center',
-  },
-  buttonText: {
-    color: colors.palette.buttonText,
-    fontWeight: 'bold',
-    fontFamily: 'Outfit-Medium',
-    fontSize: 16,
-  },
+  }
 });
 
 export default Button;

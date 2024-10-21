@@ -50,6 +50,12 @@ const typography = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
   },
+  buttonText: {
+    color: colors.palette.buttonText,
+    fontWeight: 'bold',
+    fontFamily: 'Outfit-Medium',
+    fontSize: 16,
+  },
 });
 
 export default typography;
