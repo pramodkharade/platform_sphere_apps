@@ -6,6 +6,7 @@ export type PostContentType = 'text' | 'image' | 'video';
  */
 export interface Author {
   name: string;
+  fullname: string;
   username: string;
   avatar: string;
 }

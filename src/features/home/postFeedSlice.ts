@@ -24,6 +24,7 @@ const mapApiResponseToPost = (data: ApiResponse[]): Post[] => {
     author: {
       name: `User ${item.userId}`,
       username: `user${item.userId}`,
+      fullname: `User ${item.userId}`,
       avatar: `https://via.placeholder.com/150?text=User${item.userId}`,
     },
     content: {
