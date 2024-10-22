@@ -63,8 +63,17 @@ const typography = StyleSheet.create({
   },
   buttonText: {
     color: colors.palette.primary,
-    fontWeight: 'bold',
-    fontFamily: 'Outfit-Medium',
+    fontFamily: 'Outfit-SemiBold',
+    fontSize: 16,
+  },
+  textButton: {
+    color: colors.palette.textButton,
+    fontFamily: 'Outfit-Bold',
+    fontSize: 16,
+  },
+  bottomTextButton: {
+    color: colors.palette.accent,
+    fontFamily: 'Outfit-SemiBold',
     fontSize: 16,
   },
 });

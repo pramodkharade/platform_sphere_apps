@@ -9,6 +9,7 @@ const palette = {
   onSurface: '#000000',
   onSurfaceSecondary: '#8391A1',
   buttonBackground: '#e2dcfe',
+  textButton: '#8391A1',
 } as const;
 
 export const colors = {
