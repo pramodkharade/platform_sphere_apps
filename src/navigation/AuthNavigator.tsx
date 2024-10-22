@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { DashboardScreen } from '@screens/Dashboard/DashboardScreen';
+import ForgotPasswordScreen from '@screens/ForgotPasswordScreen';
 import HomeScreen from '@screens/HomeScreen/HomeScreen';
 import OTPVerificationScreen from '@screens/OtpVerification/otpVerification';
 import PasswordChangedScreen from '@screens/PasswordChanged/PasswordChangedScreen';
@@ -19,7 +20,7 @@ type AuthStackRoutesType = StackRoutesType<AuthStackParamList>;
 const authStackRoutes: AuthStackRoutesType = [
   {
     name: 'Login',
-    component: VerifyEmailScreen,
+    component: ForgotPasswordScreen,
   },
   // {
   //   name: 'About',

@@ -1,5 +1,6 @@
 // src/components/templates/styles.ts
 
+import { colors } from '@theme/colors';
 import { spacing } from '@theme/spacing';
 import { StyleSheet } from 'react-native';
 
@@ -8,6 +9,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: spacing.lg,
+    backgroundColor: colors.palette.surface,
   },
   image: {
     height: 200,
