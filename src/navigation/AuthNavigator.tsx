@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { DashboardScreen } from '@screens/Dashboard/DashboardScreen';
 import ForgotPasswordScreen from '@screens/ForgotPasswordScreen';
 import HomeScreen from '@screens/HomeScreen/HomeScreen';
-import OTPVerificationScreen from '@screens/OtpVerification/otpVerification';
+import OTPVerificationScreen from '@screens/OtpVerification/OTPVerificationScreen';
 import PasswordChangedScreen from '@screens/PasswordChanged/PasswordChangedScreen';
 import ProfileCreatedScreen from '@screens/ProfileCreatedScreen';
 import RaiseVoiceScreen from '@screens/RaiseVoice/RaiseVoiceScreen';
@@ -20,7 +20,7 @@ type AuthStackRoutesType = StackRoutesType<AuthStackParamList>;
 const authStackRoutes: AuthStackRoutesType = [
   {
     name: 'Login',
-    component: ForgotPasswordScreen,
+    component: OTPVerificationScreen,
   },
   // {
   //   name: 'About',
