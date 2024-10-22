@@ -3,7 +3,10 @@ import { DashboardScreen } from '@screens/Dashboard/DashboardScreen';
 import HomeScreen from '@screens/HomeScreen/HomeScreen';
 import OTPVerificationScreen from '@screens/OtpVerification/otpVerification';
 import PasswordChangedScreen from '@screens/PasswordChanged/PasswordChangedScreen';
+import ProfileCreatedScreen from '@screens/ProfileCreatedScreen';
 import RaiseVoiceScreen from '@screens/RaiseVoice/RaiseVoiceScreen';
+import RaiseVoiceSuccessScreen from '@screens/RaiseVoiceSuccess';
+import VerifyEmailScreen from '@screens/VerifyEmailScreen';
 import * as React from 'react';
 import { View } from 'react-native';
 import { AuthStackParamList, StackRoutesType } from 'types/navigation';
@@ -16,7 +19,7 @@ type AuthStackRoutesType = StackRoutesType<AuthStackParamList>;
 const authStackRoutes: AuthStackRoutesType = [
   {
     name: 'Login',
-    component: RaiseVoiceScreen,
+    component: VerifyEmailScreen,
   },
   // {
   //   name: 'About',
