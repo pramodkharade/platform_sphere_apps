@@ -5,19 +5,16 @@ import { colors } from '../../theme/colors';
 const typography = StyleSheet.create({
   heading1: {
     fontSize: 24,
-    fontWeight: 'bold',
     fontFamily: 'Outfit-Bold',
     color: colors.text,
   },
   heading2: {
     fontSize: 20,
-    fontWeight: 'bold',
     fontFamily: 'Outfit-Bold',
     color: colors.text,
   },
   heading3: {
     fontSize: 18,
-    fontWeight: 'bold',
     fontFamily: 'Outfit-SemiBold',
     color: colors.text,
   },
@@ -39,7 +36,6 @@ const typography = StyleSheet.create({
   },
   captionBold: {
     fontSize: 14,
-    fontWeight: 'bold',
     fontFamily: 'Outfit-Medium',
     color: colors.textDim,
   },
@@ -66,7 +62,7 @@ const typography = StyleSheet.create({
     marginBottom: 20,
   },
   buttonText: {
-    color: colors.palette.buttonText,
+    color: colors.palette.primary,
     fontWeight: 'bold',
     fontFamily: 'Outfit-Medium',
     fontSize: 16,

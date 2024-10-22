@@ -1,31 +1,43 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { colors } from '@theme/colors';
 import { spacing } from '@theme/spacing';
-import typography from '@theme/styles/typography'; 
+import typography from '@theme/styles/typography';
+import React from 'react';
+import { GestureResponderEvent } from 'react-native';
+import { StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
 
 interface ButtonProps {
   title: string;
-  onPress: () => void;
+  onPress: (event: GestureResponderEvent) => void;
+  style?: ViewStyle;
+  textStyle?: TextStyle;
+  disabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ title, onPress }) => {
+const Button: React.FC<ButtonProps> = ({ title, onPress, style, textStyle, disabled }) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Text style={typography.buttonText}>{title}</Text>
+    <TouchableOpacity
+      style={[styles.container, style, disabled && styles.disabled]}
+      onPress={onPress}
+      disabled={disabled}
+    >
+      <Text style={[typography.buttonText, textStyle]}>{title}</Text>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: colors.palette.buttonBackground,
-    paddingVertical: spacing.md,
-    paddingHorizontal: spacing.lg, 
-    borderRadius: spacing.sm, 
-    marginVertical: spacing.sm,
+  container: {
+    width: '100%',
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.lg,
+    borderRadius: spacing.xs,
+    backgroundColor: colors.palette.primaryButton,
+    justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
+  disabled: {
+    opacity: 0.5,
+  },
 });
 
 export default Button;

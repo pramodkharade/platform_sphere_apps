@@ -3,11 +3,10 @@ import { DashboardScreen } from '@screens/Dashboard/DashboardScreen';
 import HomeScreen from '@screens/HomeScreen/HomeScreen';
 import OTPVerificationScreen from '@screens/OtpVerification/otpVerification';
 import PasswordChangedScreen from '@screens/PasswordChanged/PasswordChangedScreen';
+import RaiseVoiceScreen from '@screens/RaiseVoice/RaiseVoiceScreen';
 import * as React from 'react';
 import { View } from 'react-native';
 import { AuthStackParamList, StackRoutesType } from 'types/navigation';
-
-import RaiseVoiceScreen from '../screens/Raise-voice/raise-voice';
 
 const ForgotPassword = () => <View />;
 const Register = () => <View />;

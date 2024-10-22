@@ -3,7 +3,7 @@ import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } fro
 
 import BackButton from '../../components/BackButton';
 import typography from '@theme/styles/typography';
-import Button from '../../components/Buttons/button';
+import Button from '../../components/buttons/Button';
 
 const OTPVerificationScreen = ({ navigation }) => {
   const [otpCode, setOtpCode] = useState('');
