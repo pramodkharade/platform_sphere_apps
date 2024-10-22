@@ -2,12 +2,13 @@ const palette = {
   surface: '#ffffff',
   primary: '#6929C4',
   secondary: '#8A79D7',
+  button: '#8676D8',
+  primaryButton: 'rgba(134, 118, 216, 0.29)',
   tertiary: '#D8A8C0',
   accent: '#FFC700',
   onSurface: '#000000',
   onSurfaceSecondary: '#8391A1',
   buttonBackground: '#e2dcfe',
-  buttonText: '#502b9c',
 } as const;
 
 export const colors = {

@@ -5,7 +5,7 @@ import React from 'react';
 import { GestureResponderEvent } from 'react-native';
 import { StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
 
-interface ButtonProps {
+interface PrimaryButtonProps {
   title: string;
   onPress: (event: GestureResponderEvent) => void;
   style?: ViewStyle;
@@ -13,14 +13,14 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ title, onPress, style, textStyle, disabled }) => {
+const PrimaryButton: React.FC<PrimaryButtonProps> = ({ title, onPress, style, textStyle, disabled }) => {
   return (
     <TouchableOpacity
       style={[styles.container, style, disabled && styles.disabled]}
       onPress={onPress}
       disabled={disabled}
     >
-      <Text style={[typography.buttonText, textStyle]}>{title}</Text>
+      <Text style={[typography.label, textStyle]}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
     paddingHorizontal: spacing.lg,
     borderRadius: spacing.xs,
-    backgroundColor: colors.palette.primaryButton,
+    backgroundColor: colors.palette.button,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Button;
+export default PrimaryButton;

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+
 import BackButton from '../../components/BackButton';
 import typography from '@theme/styles/typography';
-import Button from '../../components/Buttons/button';
+import Button from '../../components/buttons/Button';
 
 const OTPVerificationScreen = ({ navigation }) => {
   const [otpCode, setOtpCode] = useState('');
@@ -19,7 +20,7 @@ const OTPVerificationScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <BackButton/>
+      <BackButton />
       <View style={styles.contentContainer}>
         <View style={styles.illustration}>
           {/* You would typically use an actual image here */}
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
     height: 200,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom:40
+    marginBottom: 40,
   },
   mockForm: {
     width: 120,
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     fontSize: 16,
     marginBottom: 24,
-    color: '#000'
+    color: '#000',
   },
   resendContainer: {
     flexDirection: 'row',

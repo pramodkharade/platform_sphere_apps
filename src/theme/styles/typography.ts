@@ -5,19 +5,16 @@ import { colors } from '../../theme/colors';
 const typography = StyleSheet.create({
   heading1: {
     fontSize: 24,
-    fontWeight: 'bold',
     fontFamily: 'Outfit-Bold',
     color: colors.text,
   },
   heading2: {
     fontSize: 20,
-    fontWeight: 'bold',
     fontFamily: 'Outfit-Bold',
     color: colors.text,
   },
   heading3: {
     fontSize: 18,
-    fontWeight: 'bold',
     fontFamily: 'Outfit-SemiBold',
     color: colors.text,
   },
@@ -39,19 +36,33 @@ const typography = StyleSheet.create({
   },
   captionBold: {
     fontSize: 14,
-    fontWeight: 'bold',
     fontFamily: 'Outfit-Medium',
     color: colors.textDim,
+  },
+  label: {
+    fontSize: 16,
+    fontFamily: 'Outfit-Bold',
+    color: colors.palette.surface,
+  },
+  labelSecondary: {
+    fontSize: 16,
+    fontFamily: 'Outfit-Bold',
+    color: colors.palette.primary,
+  },
+  pillSecondaryButton: {
+    fontSize: 12,
+    fontFamily: 'Outfit-Medium',
+    color: colors.palette.primary,
   },
   subtitle: {
     fontSize: 16,
     fontFamily: 'Outfit-Medium',
-    color: '#8E8E8E', 
+    color: '#8E8E8E',
     marginTop: 10,
     marginBottom: 20,
   },
   buttonText: {
-    color: colors.palette.buttonText,
+    color: colors.palette.primary,
     fontWeight: 'bold',
     fontFamily: 'Outfit-Medium',
     fontSize: 16,
