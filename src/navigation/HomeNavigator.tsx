@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from '@screens/LoginScreen/LoginScreen';
+import HomeScreen from '@screens/HomeScreen/HomeScreen';
 import * as React from 'react';
 import { View } from 'react-native';
 import { HomeStackParamList, StackRoutesType } from 'types/navigation';
@@ -8,10 +8,10 @@ const Register = () => <View />;
 
 type HomeStackRoutesType = StackRoutesType<HomeStackParamList>;
 
-const authStackRoutes: HomeStackRoutesType = [
+const homeStackRoutes: HomeStackRoutesType = [
   {
-    name: 'Home',
-    component: LoginScreen,
+    name: 'Dashboard',
+    component: HomeScreen,
   },
   {
     name: 'Settings',
@@ -28,7 +28,7 @@ function HomeNavigator() {
         headerShown: false,
       }}
     >
-      {authStackRoutes.map((stackRoute) => (
+      {homeStackRoutes.map((stackRoute) => (
         <Stack.Screen key={stackRoute.name} {...stackRoute} />
       ))}
     </Stack.Navigator>

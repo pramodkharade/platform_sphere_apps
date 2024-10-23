@@ -1,7 +1,13 @@
 import illustrations from '@assets/illustrations';
 import TextFieldWithThreeCTA from '@components/templates/TextFiledWithThreeCTA';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { AuthStackParamList } from 'types/navigation';
 
-const ForgotPasswordScreen: React.FC = ({}) => {
+interface ForgotPasswordScreenProps {
+  navigation: StackNavigationProp<AuthStackParamList, 'ForgotPassword'>;
+}
+
+const ForgotPasswordScreen: React.FC<ForgotPasswordScreenProps> = ({ navigation: navigator }) => {
   return (
     <TextFieldWithThreeCTA
       imageSource={illustrations.forgotPassword}
@@ -14,7 +20,9 @@ const ForgotPasswordScreen: React.FC = ({}) => {
       buttonThreeText="Login"
       onButtonOnePress={() => {}}
       onButtonTwoPress={() => {}}
-      onButtonThreePress={() => {}}
+      onButtonThreePress={() => {
+        navigator.goBack();
+      }}
     />
   );
 };

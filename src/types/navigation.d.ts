@@ -14,7 +14,7 @@ export type AuthStackParamList = {
 
 // Define the param list for the home stack
 export type HomeStackParamList = {
-  Home: undefined;
+  Dashboard: undefined;
   Settings: undefined;
 };
 

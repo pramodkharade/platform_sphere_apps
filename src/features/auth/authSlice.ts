@@ -14,6 +14,10 @@ const initialState: AuthState = {
 // Async thunk to fetch the accessToken from secure storage
 export const fetchAccessToken = createAsyncThunk('auth/fetchAccessToken', async (_, { rejectWithValue }) => {
   try {
+    // Introduce a delay
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Fetch the token from secure storage
     const token = await getItem('accessToken');
     return token;
   } catch (error) {

@@ -2,8 +2,15 @@ import { colors } from '@theme/colors';
 import { spacing } from '@theme/spacing';
 import typography from '@theme/styles/typography';
 import React from 'react';
-import { GestureResponderEvent } from 'react-native';
-import { StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
+import {
+  ActivityIndicator,
+  GestureResponderEvent,
+  StyleSheet,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  ViewStyle,
+} from 'react-native';
 
 interface PrimaryButtonProps {
   title: string;
@@ -11,16 +18,27 @@ interface PrimaryButtonProps {
   style?: ViewStyle;
   textStyle?: TextStyle;
   disabled?: boolean;
+  loading?: boolean;
 }
 
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({ title, onPress, style, textStyle, disabled }) => {
+const PrimaryButton: React.FC<PrimaryButtonProps> = ({ title, onPress, style, textStyle, disabled, loading }) => {
+  const handlePress = (event: GestureResponderEvent) => {
+    if (!loading && !disabled) {
+      onPress(event);
+    }
+  };
+
   return (
     <TouchableOpacity
-      style={[styles.container, style, disabled && styles.disabled]}
-      onPress={onPress}
-      disabled={disabled}
+      style={[styles.container, style, (disabled || loading) && styles.disabled]}
+      onPress={handlePress}
+      disabled={disabled || loading}
     >
-      <Text style={[typography.label, textStyle]}>{title}</Text>
+      {loading ? (
+        <ActivityIndicator size="small" color={colors.palette.surface} />
+      ) : (
+        <Text style={[typography.label, textStyle]}>{title}</Text>
+      )}
     </TouchableOpacity>
   );
 };

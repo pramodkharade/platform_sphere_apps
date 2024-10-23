@@ -8,6 +8,8 @@ const illustrations = {
   profileCreationSuccess: require('../illustrations/profile_creation_success.png'),
   verifyEmail: require('../illustrations/verify_email.png'),
   forgotPassword: require('../illustrations/forgot_password.png'),
+  passwordHide: require('../illustrations/passwor_hide.png'),
+  passwordShow: require('../illustrations/password_show.png'),
 };
 
 export default illustrations;

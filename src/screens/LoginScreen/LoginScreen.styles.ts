@@ -1,16 +1,18 @@
-import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
+import { colors } from '@theme/colors';
+import { ImageStyle, ViewStyle } from 'react-native';
 
 interface Styles {
   container: ViewStyle;
   scrollView: ViewStyle;
   scrollViewContent: ViewStyle;
   logo: ImageStyle;
-  title: TextStyle;
+  buttonContainer: ViewStyle;
 }
 
 const styles: Styles = {
   container: {
     flex: 1,
+    backgroundColor: colors.palette.surface,
   },
   scrollView: {
     width: '100%',
@@ -18,6 +20,8 @@ const styles: Styles = {
   },
   scrollViewContent: {
     flexGrow: 1,
+    width: '100%',
+    alignItems: 'center',
   },
   logo: {
     width: 200,
@@ -25,9 +29,11 @@ const styles: Styles = {
     resizeMode: 'contain',
     alignSelf: 'center',
   },
-  title: {
-    fontWeight: 'bold',
-    alignSelf: 'center',
+  buttonContainer: {
+    width: '100%',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    flex: 1,
   },
 };
 
