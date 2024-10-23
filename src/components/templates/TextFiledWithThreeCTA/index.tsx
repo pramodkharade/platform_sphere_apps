@@ -17,6 +17,7 @@ interface Props {
   placeholder: string;
   buttonOneText: string;
   buttonTwoText: string;
+  buttonTwoLoading?: boolean;
   buttonThreeSupplementalText?: string;
   buttonThreeText: string;
   onButtonOnePress: () => void;
@@ -31,6 +32,7 @@ const TextFieldWithThreeCTA: React.FC<Props> = ({
   placeholder,
   buttonOneText,
   buttonTwoText,
+  buttonTwoLoading,
   buttonThreeSupplementalText,
   buttonThreeText,
   onButtonOnePress,
@@ -59,7 +61,7 @@ const TextFieldWithThreeCTA: React.FC<Props> = ({
       <PrimaryTextButton title={buttonOneText} onPress={onButtonOnePress} />
 
       <View style={styles.buttonContainer}>
-        <PrimaryButton title={buttonTwoText} onPress={onButtonTwoPress} />
+        <PrimaryButton title={buttonTwoText} onPress={onButtonTwoPress} loading={buttonTwoLoading} />
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
           <Text style={typography.body}>{buttonThreeSupplementalText}</Text>
           <TouchableOpacity onPress={onButtonThreePress}>
