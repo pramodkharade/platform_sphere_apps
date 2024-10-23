@@ -1,13 +1,11 @@
 import CustomHeader from '@components/CustomHeader';
 import { useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CreateProfileScreen from '@screens/CreateProfile/CreateProfileScreen';
 import ForgotPassword from '@screens/ForgotPasswordScreen';
 import LoginScreen from '@screens/LoginScreen/LoginScreen';
 import * as React from 'react';
-import { View } from 'react-native';
 import { AuthStackParamList, StackRoutesType } from 'types/navigation';
-
-const Register = () => <View />;
 
 type AuthStackRoutesType = StackRoutesType<AuthStackParamList>;
 
@@ -18,7 +16,7 @@ const authStackRoutes: AuthStackRoutesType = [
   },
   {
     name: 'Register',
-    component: Register,
+    component: CreateProfileScreen,
   },
   {
     name: 'ForgotPassword',

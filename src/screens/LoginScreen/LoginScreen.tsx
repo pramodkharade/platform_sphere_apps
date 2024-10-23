@@ -79,7 +79,7 @@ const LoginScreen: React.FC = () => {
         />
         <PrimaryTextButton title="Forgot Password?" onPress={() => navigation.navigate('ForgotPassword')} />
         <View style={styles.buttonContainer}>
-          <PrimaryButton title="Login" onPress={() => navigation.navigate('Home')} />
+          <PrimaryButton title="Login" onPress={() => navigation.navigate('Register')} />
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
             <Text style={typography.body}>Don't have an account? </Text>
             <TouchableOpacity onPress={() => navigation.navigate('Register')}>
