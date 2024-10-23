@@ -3,22 +3,25 @@ import PrimaryButton from '@components/PrimaryButton';
 import PrimaryTextButton from '@components/PrimaryTextButton';
 import Spacer from '@components/spacer';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import typography from '@theme/styles/typography';
 import React, { useState } from 'react';
 import { Image, Text } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TextInput } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { AuthStackParamList } from 'types/navigation';
 
 import styles from '../LoginScreen/LoginScreen.styles';
 
 const LoginScreen: React.FC = () => {
-  const [emailInput, setEmailInput] = useState<string>('');
-  const [passwordInput, setPasswordInput] = useState<string>('');
-  const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
-  const navigation = useNavigation();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const navigation = useNavigation<StackNavigationProp<AuthStackParamList>>();
+
   const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
+    setIsPasswordVisible(!isPasswordVisible);
   };
 
   return (
@@ -36,8 +39,8 @@ const LoginScreen: React.FC = () => {
         <TextInput
           mode="outlined"
           placeholder="Enter your email"
-          onChangeText={setEmailInput}
-          value={emailInput}
+          value={email}
+          onChangeText={setEmail}
           textContentType="emailAddress"
           keyboardType="email-address"
           style={{ width: '100%' }}
@@ -47,16 +50,16 @@ const LoginScreen: React.FC = () => {
         <TextInput
           mode="outlined"
           placeholder="Enter your password"
-          onChangeText={setPasswordInput}
-          value={passwordInput}
+          value={password}
+          onChangeText={setPassword}
           textContentType="password"
-          secureTextEntry={!passwordVisible}
+          secureTextEntry={!isPasswordVisible}
           style={{ width: '100%' }}
           contentStyle={typography.body}
           right={
             <TextInput.Icon
               icon={
-                passwordVisible
+                isPasswordVisible
                   ? ({ size, color }) => (
                       <Image
                         source={illustrations.passwordShow}
@@ -74,8 +77,8 @@ const LoginScreen: React.FC = () => {
             />
           }
         />
-        <PrimaryTextButton title="Forgot Password?" onPress={() => {}} />
-        <PrimaryButton title="Login" onPress={() => {}} />
+        <PrimaryTextButton title="Forgot Password?" onPress={() => navigation.navigate('ForgotPassword')} />
+        <PrimaryButton title="Login" onPress={() => navigation.navigate('Home')} />
       </KeyboardAwareScrollView>
     </SafeAreaView>
   );
