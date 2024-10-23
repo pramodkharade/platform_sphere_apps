@@ -1,13 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { DashboardScreen } from '@screens/Dashboard/DashboardScreen';
-import ForgotPasswordScreen from '@screens/ForgotPasswordScreen';
-import HomeScreen from '@screens/HomeScreen/HomeScreen';
-import OTPVerificationScreen from '@screens/OtpVerification/OTPVerificationScreen';
-import PasswordChangedScreen from '@screens/PasswordChanged/PasswordChangedScreen';
-import ProfileCreatedScreen from '@screens/ProfileCreatedScreen';
-import RaiseVoiceScreen from '@screens/RaiseVoice/RaiseVoiceScreen';
-import RaiseVoiceSuccessScreen from '@screens/RaiseVoiceSuccess';
-import VerifyEmailScreen from '@screens/VerifyEmailScreen';
+import LoginScreen from '@screens/LoginScreen/LoginScreen';
 import * as React from 'react';
 import { View } from 'react-native';
 import { AuthStackParamList, StackRoutesType } from 'types/navigation';
@@ -20,12 +12,8 @@ type AuthStackRoutesType = StackRoutesType<AuthStackParamList>;
 const authStackRoutes: AuthStackRoutesType = [
   {
     name: 'Login',
-    component: OTPVerificationScreen,
+    component: LoginScreen,
   },
-  // {
-  //   name: 'About',
-  //   component: AboutScreen,
-  // },
   {
     name: 'Register',
     component: Register,
