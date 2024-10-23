@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, Image, Dimensions, TextInput } from 'react-native';
+import { View, StyleSheet, SafeAreaView, Image, Dimensions, TextInput, Text } from 'react-native';
 import Button from '../../components/Buttons/button';
 import { colors } from '@theme/colors';
 import typography from '@theme/styles/typography';
 import { spacing } from '@theme/spacing';
 import BackButton from '@components/BackButton';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const { width } = Dimensions.get('window');
 
@@ -22,49 +23,53 @@ const CreatePassword: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <BackButton />
-      <View style={styles.header}>
-        {/* Uncomment below line if you are using Ionicons */}
-        {/* <Ionicons name="chevron-back" size={24} color={colors.text} /> */}
-      </View>
-
-      <Image
-        source={{ uri: 'https://example.com/your-illustration-url' }}
-        style={styles.illustration}
-        resizeMode="contain"
-      />
-
-      <View style={styles.content}>
-        <View>
-          <Text style={[typography.heading1]}>Create new password</Text>
+      <ScrollView>
+        <BackButton />
+        <View style={styles.header}>
+          {/* Uncomment below line if you are using Ionicons */}
+          {/* <Ionicons name="chevron-back" size={24} color={colors.text} /> */}
         </View>
 
-        <Text style={[typography.subtitle, styles.subtitle]}>
-          Your new password must be unique from those previously used.
-        </Text>
-
-        <TextInput
-          style={[styles.input, { fontWeight: '500' }]}
-          value={newPassword}
-          onChangeText={setNewPassword}
-          placeholder="New Password"
-          placeholderTextColor={colors.textDim}
-          secureTextEntry
+        <Image
+          source={{ uri: 'https://example.com/your-illustration-url' }}
+          style={styles.illustration}
+          resizeMode="contain"
         />
 
-        <TextInput
-          style={[styles.input, { fontWeight: '500' }]}
-          value={confirmPassword}
-          onChangeText={setConfirmPassword}
-          placeholder="Confirm Password"
-          placeholderTextColor={colors.textDim}
-          secureTextEntry
-        />
+        <View style={styles.content}>
+          <View>
+            <Text style={[typography.heading1]}>Create new password</Text>
+          </View>
 
-        <View style={styles.buttonContainer}>
-          <Button title="Reset Password" onPress={handleResetPassword} />
+          <Text style={[typography.subtitle, styles.subtitle]}>
+            Your new password must be unique from those previously used.
+          </Text>
+
+          <TextInput
+            style={[styles.input, { fontWeight: '500' }]}
+            value={newPassword}
+            onChangeText={setNewPassword}
+            placeholder="New Password"
+            placeholderTextColor={colors.textDim}
+            textContentType="password"
+            secureTextEntry={true}
+          />
+
+          <TextInput
+            style={[styles.input, { fontWeight: '500' }]}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
+            placeholder="Confirm Password"
+            placeholderTextColor={colors.textDim}
+            textContentType="password"
+            secureTextEntry={true}
+          />
+
+          <View style={styles.buttonContainer}>
+            <Button title="Reset Password" onPress={handleResetPassword} />
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -99,7 +104,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
     marginBottom: spacing.md,
     fontSize: 16,
-    color: colors.text,
+    fontFamily: 'Outfit-Medium',
   },
   buttonContainer: {
     marginTop: 16,
