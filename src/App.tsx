@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 
+import RootNavigator from '@navigation/RootNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
@@ -7,7 +8,6 @@ import { PaperProvider } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 
-import AuthNavigator from './navigation/AuthNavigator';
 import store from './store';
 
 function App(): React.JSX.Element {
@@ -16,9 +16,7 @@ function App(): React.JSX.Element {
       <PaperProvider>
         <SafeAreaProvider>
           <GestureHandlerRootView style={{ flex: 1 }}>
-            <NavigationContainer>
-              <AuthNavigator />
-            </NavigationContainer>
+            <RootNavigator />
           </GestureHandlerRootView>
         </SafeAreaProvider>
       </PaperProvider>
