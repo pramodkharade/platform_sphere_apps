@@ -6,6 +6,7 @@ interface Styles {
   scrollView: ViewStyle;
   scrollViewContent: ViewStyle;
   logo: ImageStyle;
+  buttonContainer: ViewStyle;
 }
 
 const styles: Styles = {
@@ -27,6 +28,12 @@ const styles: Styles = {
     height: 200,
     resizeMode: 'contain',
     alignSelf: 'center',
+  },
+  buttonContainer: {
+    width: '100%',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    flex: 1,
   },
 };
 

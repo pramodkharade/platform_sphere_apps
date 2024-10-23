@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import typography from '@theme/styles/typography';
 import React, { useState } from 'react';
-import { Image, Text } from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TextInput } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -32,7 +32,7 @@ const LoginScreen: React.FC = () => {
         bounces={false}
         overScrollMode="never"
       >
-        <Spacer size={20} />
+        <Spacer size={60} />
         <Text style={typography.heading1}>Welcome back!</Text>
         <Spacer size={20} />
         <Image source={illustrations.login} style={styles.logo} />
@@ -78,7 +78,15 @@ const LoginScreen: React.FC = () => {
           }
         />
         <PrimaryTextButton title="Forgot Password?" onPress={() => navigation.navigate('ForgotPassword')} />
-        <PrimaryButton title="Login" onPress={() => navigation.navigate('Home')} />
+        <View style={styles.buttonContainer}>
+          <PrimaryButton title="Login" onPress={() => navigation.navigate('Home')} />
+          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={typography.body}>Don't have an account? </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+              <Text style={typography.bottomTextButton}>Register Now</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </KeyboardAwareScrollView>
     </SafeAreaView>
   );
